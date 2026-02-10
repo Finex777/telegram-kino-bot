@@ -1,10 +1,11 @@
-﻿from aiogram import Bot, Dispatcher, executor, types
+import os
+from aiogram import Bot, Dispatcher, executor, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 import sqlite3
 
 # ==========================
 # 1️⃣ BOT SOZLAMALARI
-TOKEN = "8536819940:AAH7lDPwt4vn7hjaKV_GIOL8UxuyLQHPzgA"
+TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_ID = 8411962922  # Telegram ID
 CHANNEL = "@Mutlfilim_Kinolar"  # Siz yaratgan kanal username
 # ==========================
@@ -99,3 +100,4 @@ async def get_code(msg: types.Message):
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
     
+
